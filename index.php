@@ -52,9 +52,17 @@ $hotels = [
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
+                    <div class="title">
+                        <h2>Hotel disponibili</h2>
+                    </div>
                     <ul>
                         <?php foreach($hotels as $hotel){ ?>
-                            <li><?php echo $hotel['name']?></li>
+                            <li><?php echo $hotel['name']?>
+                                <ul>
+                                    <li><?php echo $hotel['description'] ?></li>
+                                    <li><?php echo 'Voto dei clienti: '.$hotel['vote']. " / ".'5' ?></li>
+                                </ul>
+                            </li>
                         <?php } ?>
                     </ul>
                 </div>
