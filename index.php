@@ -72,6 +72,27 @@ $hotels = [
                             </li>
                         <?php } ?>
                     </ul>
+                    <table class="table table-bordered">
+                        <?php foreach($hotels as $hotel){ ?>
+                            <thead>
+                                <tr>
+                                <th scope="col"><?php echo $hotel['name']?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td><?php echo $hotel['description'] ?></td>
+                                </tr>
+                                <tr>
+                                <td><?php echo 'Voto dei clienti: '.$hotel['vote']. " / ".'5' ?></td>
+                                </tr>
+                                <tr>
+                                <td>Larry the Bird</td>
+                                <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        <?php } ?>
+                    </table>
                 </div>
             </div>
         </div>
