@@ -36,7 +36,6 @@ $hotels = [
         'distance_to_center' => 50
     ],
 ];
-
 ?>
 
 
@@ -61,6 +60,14 @@ $hotels = [
                                 <ul>
                                     <li><?php echo $hotel['description'] ?></li>
                                     <li><?php echo 'Voto dei clienti: '.$hotel['vote']. " / ".'5' ?></li>
+                                    <li><?php echo 'Distanza dal centro: '.$hotel['distance_to_center'].' Km '?></li>
+                                    <li><?php if($hotel['parking'] == true){
+                                                echo "Possibilità di parcheggiare l'auto: ".$string_true = json_encode($hotel['parking']);
+                                              }
+                                              elseif($hotel['parking'] == false) {
+                                                    echo "Possibilità di parcheggiare l'auto: ".$string_false = json_encode($hotel['parking']);
+                                              }
+                                    ?></li>
                                 </ul>
                             </li>
                         <?php } ?>
