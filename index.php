@@ -54,24 +54,6 @@ $hotels = [
                     <div class="title">
                         <h2>Hotel disponibili</h2>
                     </div>
-                    <ul>
-                        <?php foreach($hotels as $hotel){ ?>
-                            <li><?php echo $hotel['name']?>
-                                <ul>
-                                    <li><?php echo $hotel['description'] ?></li>
-                                    <li><?php echo 'Voto dei clienti: '.$hotel['vote']. " / ".'5' ?></li>
-                                    <li><?php echo 'Distanza dal centro: '.$hotel['distance_to_center'].' Km '?></li>
-                                    <li><?php if($hotel['parking'] == true){
-                                                echo "Possibilità di parcheggiare l'auto: ".$string_true = json_encode($hotel['parking']);
-                                              }
-                                              elseif($hotel['parking'] == false) {
-                                                    echo "Possibilità di parcheggiare l'auto: ".$string_false = json_encode($hotel['parking']);
-                                              }
-                                    ?></li>
-                                </ul>
-                            </li>
-                        <?php } ?>
-                    </ul>
                     <table class="table table-bordered">
                         <?php foreach($hotels as $hotel){ ?>
                             <thead>
@@ -87,8 +69,16 @@ $hotels = [
                                 <td><?php echo 'Voto dei clienti: '.$hotel['vote']. " / ".'5' ?></td>
                                 </tr>
                                 <tr>
-                                <td>Larry the Bird</td>
-                                <td>@twitter</td>
+                                <td><?php echo 'Distanza dal centro: '.$hotel['distance_to_center'].' Km '?></td>
+                                </tr>
+                                <tr>
+                                <td><?php if($hotel['parking'] == true){
+                                                echo "Possibilità di parcheggiare l'auto: ".$string_true = json_encode($hotel['parking']);
+                                              }
+                                              elseif($hotel['parking'] == false) {
+                                                    echo "Possibilità di parcheggiare l'auto: ".$string_false = json_encode($hotel['parking']);
+                                              }
+                                ?></td>
                                 </tr>
                             </tbody>
                         <?php } ?>
