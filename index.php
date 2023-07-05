@@ -69,13 +69,13 @@ $hotels = [
                             <tr>
                             <td><?php echo $hotel['name']?></td>
                             <td><?php echo $hotel['description'] ?></td>
-                            <td><?php echo 'Voto dei clienti: '.$hotel['vote']. " / ".'5' ?></td>
-                            <td><?php echo 'Distanza dal centro: '.$hotel['distance_to_center'].' Km '?></td>
+                            <td><?php echo $hotel['vote']. " / ".'5' ?></td>
+                            <td><?php echo $hotel['distance_to_center'].' Km '?></td>
                             <td><?php if($hotel['parking'] == true){
-                                            echo "Possibilità di parcheggiare l'auto: ".$string_true = json_encode($hotel['parking']);
+                                            echo $string_true = json_encode($hotel['parking']);
                                             }
                                             elseif($hotel['parking'] == false) {
-                                                echo "Possibilità di parcheggiare l'auto: ".$string_false = json_encode($hotel['parking']);
+                                                echo $string_false = json_encode($hotel['parking']);
                                             }
                             ?></td>
                             </tr>

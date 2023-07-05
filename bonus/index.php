@@ -1,41 +1,5 @@
 <?php 
-$hotels = [
-    [
-        'name' => 'Hotel Belvedere',
-        'description' => 'Hotel Belvedere Descrizione',
-        'parking' => true,
-        'vote' => 4,
-        'distance_to_center' => 10.4
-    ],
-    [
-        'name' => 'Hotel Futuro',
-        'description' => 'Hotel Futuro Descrizione',
-        'parking' => true,
-        'vote' => 2,
-        'distance_to_center' => 2
-    ],
-    [
-        'name' => 'Hotel Rivamare',
-        'description' => 'Hotel Rivamare Descrizione',
-        'parking' => false,
-        'vote' => 1,
-        'distance_to_center' => 1
-    ],
-    [
-        'name' => 'Hotel Bellavista',
-        'description' => 'Hotel Bellavista Descrizione',
-        'parking' => false,
-        'vote' => 5,
-        'distance_to_center' => 5.5
-    ],
-    [
-        'name' => 'Hotel Milano',
-        'description' => 'Hotel Milano Descrizione',
-        'parking' => true,
-        'vote' => 2,
-        'distance_to_center' => 50
-    ],
-];
+    include __DIR__.'/partials/vars.php'
 ?>
 
 
@@ -69,13 +33,13 @@ $hotels = [
                             <tr>
                             <td><?php echo $hotel['name']?></td>
                             <td><?php echo $hotel['description'] ?></td>
-                            <td><?php echo 'Voto dei clienti: '.$hotel['vote']. " / ".'5' ?></td>
-                            <td><?php echo 'Distanza dal centro: '.$hotel['distance_to_center'].' Km '?></td>
+                            <td><?php echo $hotel['vote']. " / ".'5' ?></td>
+                            <td><?php echo $hotel['distance_to_center'].' Km '?></td>
                             <td><?php if($hotel['parking'] == true){
-                                            echo "Possibilità di parcheggiare l'auto: ".$string_true = json_encode($hotel['parking']);
+                                            echo $string_true = json_encode($hotel['parking']);
                                             }
                                             elseif($hotel['parking'] == false) {
-                                                echo "Possibilità di parcheggiare l'auto: ".$string_false = json_encode($hotel['parking']);
+                                                echo $string_false = json_encode($hotel['parking']);
                                             }
                             ?></td>
                             </tr>
