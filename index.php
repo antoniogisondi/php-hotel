@@ -55,33 +55,32 @@ $hotels = [
                         <h2>Hotel disponibili</h2>
                     </div>
                     <table class="table table-bordered">
-                        <?php foreach($hotels as $hotel){ ?>
-                            <thead>
-                                <tr>
-                                <th scope="col"><?php echo $hotel['name']?></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <td><?php echo $hotel['description'] ?></td>
-                                </tr>
-                                <tr>
-                                <td><?php echo 'Voto dei clienti: '.$hotel['vote']. " / ".'5' ?></td>
-                                </tr>
-                                <tr>
-                                <td><?php echo 'Distanza dal centro: '.$hotel['distance_to_center'].' Km '?></td>
-                                </tr>
-                                <tr>
-                                <td><?php if($hotel['parking'] == true){
-                                                echo "Possibilità di parcheggiare l'auto: ".$string_true = json_encode($hotel['parking']);
-                                              }
-                                              elseif($hotel['parking'] == false) {
-                                                    echo "Possibilità di parcheggiare l'auto: ".$string_false = json_encode($hotel['parking']);
-                                              }
-                                ?></td>
-                                </tr>
-                            </tbody>
-                        <?php } ?>
+                        <thead>
+                            <tr>
+                            <th scope="col">Nome Hotel</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Voto</th>
+                            <th scope="col">Distanza dal centro</th>
+                            <th scope="col">Possibilità di parcheggio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($hotels as $hotel){ ?>
+                            <tr>
+                            <td><?php echo $hotel['name']?></td>
+                            <td><?php echo $hotel['description'] ?></td>
+                            <td><?php echo 'Voto dei clienti: '.$hotel['vote']. " / ".'5' ?></td>
+                            <td><?php echo 'Distanza dal centro: '.$hotel['distance_to_center'].' Km '?></td>
+                            <td><?php if($hotel['parking'] == true){
+                                            echo "Possibilità di parcheggiare l'auto: ".$string_true = json_encode($hotel['parking']);
+                                            }
+                                            elseif($hotel['parking'] == false) {
+                                                echo "Possibilità di parcheggiare l'auto: ".$string_false = json_encode($hotel['parking']);
+                                            }
+                            ?></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
                     </table>
                 </div>
             </div>
