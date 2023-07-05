@@ -1,15 +1,16 @@
 <?php 
     include __DIR__.'/partials/vars.php';
 
-
-
     if(isset($_GET['parking'])){
-        $park = $_GET['parking'];
+        $var_parking = $_GET['parking'];
         $array_hotels = [];
         foreach ($hotels as $index => $hotel){
-            if($hotel['parking'] == filter_var($park, FILTER_VALIDATE_BOOLEAN) ){
+            if($hotel['parking'] == filter_var($var_parking, FILTER_VALIDATE_BOOLEAN) ){
                 $array_hotels [] = $hotel;
 
+            }
+            else if($var_parking == 'reset'){
+                $array_hotels = $hotels;
             }
         };
         $hotels = $array_hotels;
@@ -21,7 +22,7 @@
         $vote = $_GET['vote'];
         $rating_hotels = [];
 
-        foreach($filter_hotels as $index => $hotel){
+        foreach($hotels as $index => $hotel){
             if($hotel['vote'] === $vote){
                 $rating_hotels [] = $hotels;
             }
@@ -48,7 +49,6 @@
                         <div class="col">
                             <label for="parking" class="control-label">Parcheggio</label>
                             <select name="parking" id="parking">
-                                <option value="">Tutti</option>
                                 <option value="0">No</option>
                                 <option value="1">Si</option>
                             </select>
